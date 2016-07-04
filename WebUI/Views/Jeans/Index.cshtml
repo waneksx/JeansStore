@@ -1,0 +1,15 @@
+﻿@model WebUI.Models.JeansListViewModel
+
+@{
+    ViewBag.Title = "Jeans Store";
+}
+@foreach (var j in Model.Jeans)
+{
+    Html.RenderPartial("JeansSummary", j);
+
+}
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x, color = Model.CurrentColor }))
+</div>
+
+
