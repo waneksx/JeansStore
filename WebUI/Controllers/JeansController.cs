@@ -24,7 +24,7 @@ namespace WebUI.Controllers
             JeansListViewModel model = new JeansListViewModel
             {
                 Jeans = repository.Jeans
-                .Where(p => color == null || p.Color == color)
+                .Where(p => color == null || p.Color.Name == color)
 .OrderBy(j => j.JeansId)
 .Skip((page - 1) * PageSize)
 .Take(PageSize),
@@ -34,7 +34,7 @@ namespace WebUI.Controllers
                     ItemsPerPage = PageSize,
                     TotalItems = color == null ?
 repository.Jeans.Count() :
-repository.Jeans.Where(e => e.Color == color).Count()
+repository.Jeans.Where(e => e.Color.Name == color).Count()
                 },
                 CurrentColor = color
             };

@@ -18,7 +18,7 @@ namespace WebUI.Controllers
         {
             ViewBag.SelectedColor = color;
             IEnumerable<string> categories = repository.Jeans
-            .Select(x => x.Color)
+            .Select(x => x.Color.Name)
             .Distinct()
             .OrderBy(x => x);
             return PartialView(categories);

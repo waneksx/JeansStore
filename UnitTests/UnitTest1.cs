@@ -68,11 +68,11 @@ new Jeans {JeansId = 5, Name = "P5"}
             // Arrange
             Mock<IJeansRepository> mock = new Mock<IJeansRepository>();
             mock.Setup(m => m.Jeans).Returns(new Jeans[] {
-new Jeans {JeansId = 1, Name = "P1", Color = "Col1"},
-new Jeans {JeansId = 2, Name = "P2", Color = "Col2"},
-new Jeans {JeansId = 3, Name = "P3", Color = "Col1"},
-new Jeans {JeansId = 4, Name = "P4", Color = "Col2"},
-new Jeans {JeansId = 5, Name = "P5", Color = "Col3"}
+new Jeans {JeansId = 1, Name = "P1", Color = new Color { Name = "Col1"} },
+new Jeans {JeansId = 2, Name = "P2", Color = new Color { Name = "Col2"}},
+new Jeans {JeansId = 3, Name = "P3", Color = new Color { Name = "Col1"}},
+new Jeans {JeansId = 4, Name = "P4", Color = new Color { Name = "Col2"}},
+new Jeans {JeansId = 5, Name = "P5", Color = new Color { Name = "Col3"}}
 }.AsQueryable());
             // Arrange
             JeansController controller = new JeansController(mock.Object);
@@ -81,8 +81,8 @@ new Jeans {JeansId = 5, Name = "P5", Color = "Col3"}
             Jeans[] result = ((JeansListViewModel)controller.Index("Col2", 1).Model).Jeans.ToArray();
             // Assert
             Assert.AreEqual(result.Length, 2);
-            Assert.IsTrue(result[0].Name == "P2" && result[0].Color == "Col2");
-            Assert.IsTrue(result[1].Name == "P4" && result[1].Color == "Col2");
+            Assert.IsTrue(result[0].Name == "P2" && result[0].Color.Name == "Col2");
+            Assert.IsTrue(result[1].Name == "P4" && result[1].Color.Name == "Col2");
         }
 
         [TestMethod]
@@ -93,10 +93,10 @@ new Jeans {JeansId = 5, Name = "P5", Color = "Col3"}
             // Arrange
             Mock<IJeansRepository> mock = new Mock<IJeansRepository>();
             mock.Setup(m => m.Jeans).Returns(new Jeans[] {
-new Jeans {JeansId = 1, Name = "P1", Color = "Apples"},
-new Jeans {JeansId = 2, Name = "P2", Color = "Apples"},
-new Jeans {JeansId = 3, Name = "P3", Color = "Plums"},
-new Jeans {JeansId = 4, Name = "P4", Color = "Oranges"},
+new Jeans {JeansId = 1, Name = "P1", Color = new Color { Name = "Apples"}},
+new Jeans {JeansId = 2, Name = "P2", Color = new Color { Name = "Apples"}},
+new Jeans {JeansId = 3, Name = "P3", Color = new Color { Name = "Plums"}},
+new Jeans {JeansId = 4, Name = "P4", Color = new Color { Name = "Oranges"}},
 
 }.AsQueryable());
             // Arrange - create the controller
@@ -117,8 +117,8 @@ new Jeans {JeansId = 4, Name = "P4", Color = "Oranges"},
             // - create the mock repository
             Mock<IJeansRepository> mock = new Mock<IJeansRepository>();
             mock.Setup(m => m.Jeans).Returns(new Jeans[] {
-new Jeans {JeansId = 1, Name = "P1", Color = "Apples"},
-new Jeans {JeansId = 4, Name = "P2", Color = "Oranges"},
+new Jeans {JeansId = 1, Name = "P1", Color = new Color { Name = "Apples"}},
+new Jeans {JeansId = 4, Name = "P2", Color = new Color { Name = "Oranges"}},
 
 }.AsQueryable());
             // Arrange - create the controller
@@ -137,11 +137,11 @@ new Jeans {JeansId = 4, Name = "P2", Color = "Oranges"},
             // Arrange
             Mock<IJeansRepository> mock = new Mock<IJeansRepository>();
             mock.Setup(m => m.Jeans).Returns(new Jeans[] {
-new Jeans {JeansId = 1, Name = "P1", Color = "Col1"},
-new Jeans {JeansId = 2, Name = "P2", Color = "Col2"},
-new Jeans {JeansId = 3, Name = "P3", Color = "Col1"},
-new Jeans {JeansId = 4, Name = "P4", Color = "Col2"},
-new Jeans {JeansId = 5, Name = "P5", Color = "Col3"}
+new Jeans {JeansId = 1, Name = "P1", Color = new Color { Name = "Col1"}},
+new Jeans {JeansId = 2, Name = "P2", Color = new Color { Name = "Col2"}},
+new Jeans {JeansId = 3, Name = "P3", Color = new Color { Name = "Col1"}},
+new Jeans {JeansId = 4, Name = "P4", Color = new Color { Name = "Col2"}},
+new Jeans {JeansId = 5, Name = "P5", Color = new Color { Name = "Col3"}}
 }.AsQueryable());
             // Arrange
             JeansController target = new JeansController(mock.Object);

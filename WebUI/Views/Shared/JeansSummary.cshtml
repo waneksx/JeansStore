@@ -2,7 +2,15 @@
 
 <div class="item">
     <h3>@Model.Name</h3>
-    @Model.Color
+   @Model.Color.Name
+    <br> Select size:
+    <select>
+        @foreach (var size in Model.Sizes)
+        {
+            <option>@size.SizeValue</option>
+        }
+    </select>
+
 
     @using (Html.BeginForm("AddToCart", "Cart"))
     {
@@ -11,5 +19,5 @@
         <input type="submit" value="+ Add to cart" />
     }
     <h4>@Model.Price.ToString() gryven`</h4>
-    
+
 </div>

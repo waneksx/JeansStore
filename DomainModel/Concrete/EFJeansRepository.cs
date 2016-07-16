@@ -15,7 +15,7 @@ namespace DomainModel.Concrete
         {
             get
             {
-                return context.Jeans;
+                return context.Jeans.Include("Color").Include("Country").Include("Sizes");
             }
         }
     }

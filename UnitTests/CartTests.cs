@@ -113,8 +113,9 @@ namespace UnitTests
         {
             // Arrange - create the mock repository
             Mock<IJeansRepository> mock = new Mock<IJeansRepository>();
+
             mock.Setup(m => m.Jeans).Returns(new Jeans[] {
-new Jeans {JeansId = 1, Name = "P1", Color = "Apples"},
+new Jeans {JeansId = 1, Name = "P1"},
 }.AsQueryable());
             // Arrange - create a Cart
             Cart cart = new Cart();
@@ -133,7 +134,7 @@ new Jeans {JeansId = 1, Name = "P1", Color = "Apples"},
             // Arrange - create the mock repository
             Mock<IJeansRepository> mock = new Mock<IJeansRepository>();
             mock.Setup(m => m.Jeans).Returns(new Jeans[] {
-new Jeans {JeansId = 1, Name = "P1", Color = "Apples"},
+new Jeans {JeansId = 1, Name = "P1"},
 }.AsQueryable());
             // Arrange - create a Cart
             Cart cart = new Cart();

@@ -53,10 +53,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IJeansRepository.cs" />
+    <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Concrete\EFJeansRepository.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\CartLine.cs" />
+    <Compile Include="Entities\Color.cs" />
+    <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Jeans.cs" />
+    <Compile Include="Entities\JeansQuantity.cs" />
+    <Compile Include="Entities\ShippingDetails.cs" />
+    <Compile Include="Entities\Size.cs" />
     <Compile Include="JeansDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

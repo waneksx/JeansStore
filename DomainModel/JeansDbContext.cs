@@ -14,12 +14,10 @@
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<JeansDbContext, Configuration>());
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<JeansDbContext>());
-
-
         }
 
 
 
-        public virtual DbSet<Jeans> Jeans { get; set; }        
+        public virtual DbSet<Jeans> Jeans { get; set; }
     }
 }

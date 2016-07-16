@@ -10,7 +10,7 @@ namespace DomainModel.Entities
 {
     public class Jeans
     {
-        [Key]       
+        [Key]
         public int JeansId { get; set; }
 
         [Required]
@@ -20,17 +20,15 @@ namespace DomainModel.Entities
         public decimal Price { get; set; }
 
         [Required]
-        public int Size { get; set; }
+        public virtual ICollection<Size> Sizes { get; set; }
 
-        [Required]
-        public int Quantity { get; set; }
-
-        public string Color { get; set; }
+        [Column("ColorId")]
+        public virtual Color Color { get; set; }
 
         //public Color JeansColor { get; set; }
 
-        public string Country { get ; set; }
+        public virtual Country Country { get; set; }
 
-        
+
     }
 }
