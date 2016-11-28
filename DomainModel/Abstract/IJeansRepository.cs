@@ -11,5 +11,6 @@ namespace DomainModel.Abstract
     {
 
         IEnumerable<Jeans> Jeans { get; }
+        void SaveProduct(Jeans jeans);
     }
 }

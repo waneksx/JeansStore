@@ -53,23 +53,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IJeansRepository.cs" />
-    <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Concrete\EFJeansRepository.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\CartLine.cs" />
     <Compile Include="Entities\Color.cs" />
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Jeans.cs" />
-    <Compile Include="Entities\JeansQuantity.cs" />
     <Compile Include="Entities\ShippingDetails.cs" />
     <Compile Include="Entities\Size.cs" />
     <Compile Include="JeansDbContext.cs" />
+    <Compile Include="Migrations\201607221405398_22.07.16_Size_quantity.cs" />
+    <Compile Include="Migrations\201607221405398_22.07.16_Size_quantity.Designer.cs">
+      <DependentUpon>201607221405398_22.07.16_Size_quantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607221405398_22.07.16_Size_quantity.resx">
+      <DependentUpon>201607221405398_22.07.16_Size_quantity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

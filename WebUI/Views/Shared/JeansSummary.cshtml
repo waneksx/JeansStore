@@ -2,8 +2,8 @@
 
 <div class="item">
     <h3>@Model.Name</h3>
-   @Model.Color.Name
-    <br> Select size:
+     <div style="width : 40px; height :10px; background-color : @Model.Color.HtmlCode;"></div>   
+     Select size:
     <select>
         @foreach (var size in Model.Sizes)
         {

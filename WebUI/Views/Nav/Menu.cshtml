@@ -1,18 +1,29 @@
 ﻿@model  IEnumerable<string>
 
-@Html.ActionLink("Home", "Index", "Jeans")
-@foreach (var link in Model)
-{
-    @Html.RouteLink(link, new
-{
-    controller = "Jeans",
-    action = "Index",
-    color = link,
-    page = 1
-},
+
+
+<details>
+    <summary>Colors</summary>
+    <ul>
+        @foreach (var link in Model)
+        {
+            <li>
+                @Html.RouteLink(link, new
+           {
+               controller = "Jeans",
+               action = "Index",
+               color = link,
+               page = 1
+           },
 new
 {
     @class = link == ViewBag.SelectedColor ? "selected" : null
 })
-}
+            </li>
+        }
+            
+        </ul>
+    </details>
+
+
 

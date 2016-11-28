@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Routing;
 using Ninject;
+
 using System.Web.Mvc;
 using DomainModel.Abstract;
 using Moq;
@@ -39,6 +40,7 @@ namespace WebUI.Infrastructure
             //}.AsQueryable()); 
             #endregion
             ninjectKernel.Bind<IJeansRepository>().To<EFJeansRepository>();
+            
         }
     }
 }

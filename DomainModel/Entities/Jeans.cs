@@ -5,12 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace DomainModel.Entities
 {
     public class Jeans
     {
         [Key]
+        [HiddenInput(DisplayValue = false)]
         public int JeansId { get; set; }
 
         [Required]
@@ -24,10 +26,12 @@ namespace DomainModel.Entities
 
         [Column("ColorId")]
         public virtual Color Color { get; set; }
-
-        //public Color JeansColor { get; set; }
+        
 
         public virtual Country Country { get; set; }
+
+
+        //public void SellOne(int jeansId, int size)
 
 
     }

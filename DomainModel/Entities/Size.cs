@@ -16,8 +16,9 @@ namespace DomainModel.Entities
         [Required]
         public int SizeValue { get; set; }
 
+
         [Required]
-        [Column("QuantityId")]
-        public virtual JeansQuantity Quantity { get; set; }
+        public int Quantity { get; set; }
+
     }
 }
